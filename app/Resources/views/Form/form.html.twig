@@ -1,0 +1,57 @@
+{% form_theme form 'bootstrap_3_layout.html.twig'%}
+
+{{ form_start(form) }}
+<div class="stepOne" id="stepOne">
+    <div class="headingDiv">
+        <h2>Step 1: Your details</h2>
+    </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.fName) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.lName) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.email) }}
+            </div>
+        </div>
+    <div id="navbtn">
+        <button type="button" id="btnOne">Next</button>
+    </div>
+</div>
+
+<div class="stepTwo" id="stepTwo">
+    <div class="headingDiv">
+        <h2>Step 2: More comments</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            {{ form_row(form.mobile) }}
+        </div>
+        <div class="col-md-4">
+            {{ form_row(form.gender) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            {{ form_row(form.dateOfBirth) }}
+        </div>
+    </div>
+    <div id="navbtn">
+        <button type="button" id="bBtnTwo">Back</button>
+        <button type="button" id="btnTwo">Next</button>
+    </div>
+</div>
+<div class="stepThree" id="stepThree">
+    <div class="headingDiv">
+        <h2>Step 3: Final comments</h2>
+    </div>
+    {{ form_row(form.comments) }}
+    <div class="navbtn">
+        {{ form_row(form.submit) }}
+    </div>
+    {{ form_end(form) }}
+</div>
