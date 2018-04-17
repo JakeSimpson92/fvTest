@@ -3,9 +3,6 @@ require('../css/app.scss');
 var $ = require('jquery');
 
 
-var stageOnevalid = true;
-var stageTwovalid = true;
-
 $('#btnOne, #btnTwo, #bBtnTwo, #bBtnThree').click(function () {
 	if (this.id == 'btnOne') {
 
@@ -23,7 +20,7 @@ $('#btnOne, #btnTwo, #bBtnTwo, #bBtnThree').click(function () {
 
        var mobile = validateMobile($('#mobile').val());
        var gender = validateGender($('#gender').val());
-       console.log('gender is' + stageTwovalid);
+
 	    var month = doubleDigit($('#user_dateOfBirth_month').val());
 	    var day = doubleDigit($('#user_dateOfBirth_day').val());
         var DOB = $('#user_dateOfBirth_year').val() + '' + month + '' + day;
@@ -35,13 +32,11 @@ $('#btnOne, #btnTwo, #bBtnTwo, #bBtnThree').click(function () {
    }
 
    if (this.id == 'bBtnTwo') {
-       console.log('bBtnTwo pressed');
       $('#stepTwo').slideUp();
       $('#stepOne').slideDown();
    }
 
    if (this.id == 'bBtnThree') {
-       console.log('bBtnThree pressed');
       $('#stepThree').slideUp();
       $('#stepTwo').slideDown();
    }
@@ -50,7 +45,6 @@ $('#btnOne, #btnTwo, #bBtnTwo, #bBtnThree').click(function () {
 function validateString(field,string){
     if (string == "")
     {
-        console.log(field);
         $(field).text('Please enter a valid name');
         return false;
     }

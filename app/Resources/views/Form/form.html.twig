@@ -3,22 +3,22 @@
 {{ form_start(form) }}
 <div class="formStep" >
     <div class="headingDiv">
-        <h2>Step 1: Your details</h2>
+        <div class="stepTitle">Step 1: Your details</div>
     </div>
     <div class="formContent" id="stepOne">
         <div class="errorMsg"></div>
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-sm-4">
                 {{ form_row(form.fName, { 'id': 'fName'}) }}
                 <div id="fNameErr"></div>
             </div>
-            <div class="col-md-5">
+            <div class="col-sm-4">
                 {{ form_row(form.lName, { 'id': 'lName'}) }}
                 <div id="lNameErr"></div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-sm-4">
                 {{ form_row(form.email, { 'id': 'email'}) }}
                 <div id="emailErr"></div>
             </div>
@@ -31,24 +31,24 @@
 
 <div class="formStep" >
     <div class="headingDiv">
-        <h2>Step 2: More comments</h2>
+        <div class="stepTitle">Step 2: More comments</div>
     </div>
     <div class="formContent hiddenStep" id="stepTwo">
         <div class="errorMsg"></div>
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-sm-4">
                 {{ form_row(form.mobile, { 'id': 'mobile'}) }}
                 <br>
                 <div id="mobileErr"></div>
             </div>
-            <div class="col-md-5">
+            <div class="col-sm-4">
                 {{ form_row(form.gender, { 'id': 'gender'}) }}
                 <br>
                 <div id="genderErr"></div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-sm-7">
                 {{ form_row(form.dateOfBirth, { 'id': 'dateOfBirth'}) }}
                 <br>
                 <div id="dateOfBirthErr"></div>
@@ -62,7 +62,7 @@
 </div>
 <div class="formStep" >
     <div class="headingDiv">
-        <h2>Step 3: Final comments</h2>
+        <div class="stepTitle">Step 3: Final comments</div>
     </div>
     <div class="formContent hiddenStep" id="stepThree">
         {{ form_row(form.comments, { 'id': 'comments'}) }}

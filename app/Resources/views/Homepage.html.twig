@@ -2,10 +2,12 @@
 {% block body %}
 <div class="container">
 <div class="row">
-    <div class="col-md-offset-2 col-md-8">
+    <div class="col-md-offset-2 col-md-8 whiteboarder">
 
         {% for message in app.flashes('notice') %}
+        	{% if message is defined %}
             <div id="submit success"><h2>{{ message }}</h2></div>
+        	{% endif %}
         {% endfor %}
             <div class="ibox-content">
                 {% include 'Form/form.html.twig' %}

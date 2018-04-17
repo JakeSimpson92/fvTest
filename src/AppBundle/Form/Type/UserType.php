@@ -8,7 +8,6 @@
 
 namespace AppBundle\Form\Type;
 
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,7 +17,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
-use Symfony\Component\Form\Extension\Core\Type as Fields;
 
 class UserType extends AbstractType
 {
@@ -29,12 +27,10 @@ class UserType extends AbstractType
                 'data_class' => 'AppBundle\Entity\User\User',
                 'form_type'  => 'add',
                 'user'       => null,
-                'auth'       => null,
             )
         );
         $resolver->setAllowedValues('form_type', array(
             'add',
-            'edit',
         ));
     }
 
@@ -44,7 +40,7 @@ class UserType extends AbstractType
         $builder
             ->add('fName', TextType::class, array('label' => 'First Name'))
             ->add('lName', TextType::class, array('label' => 'Surname'))
-            ->add('email', TextType::class, array('label' => 'Email'))
+            ->add('email', TextType::class, array('label' => 'Email Address:'))
             ->add('mobile', TextType::class, array('label' => 'Mobile'))
             ->add('gender', ChoiceType::class, array('label' => 'Gender', 'choices' => array(
                 'Please Select' => 'null',
