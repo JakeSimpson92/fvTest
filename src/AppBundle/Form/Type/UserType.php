@@ -13,6 +13,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -45,12 +46,17 @@ class UserType extends AbstractType
             ->add('lName', TextType::class, array('label' => 'Surname'))
             ->add('email', TextType::class, array('label' => 'Email'))
             ->add('mobile', TextType::class, array('label' => 'Mobile'))
-            ->add('gender', TextType::class, array('label' => 'Gender'))
-            ->add('dateOfBirth', DateType::class, array('label' => 'Date of Birth'))
-            ->add('comments', TextareaType::class, array('label' => 'Comments'))
+            ->add('gender', ChoiceType::class, array('label' => 'Gender', 'choices' => array(
+                'Please Select' => 'null',
+                'Male' => 'Male',
+                'Female' => 'Female',
+                'Other' => 'Other',
+            )))
+            ->add('dateOfBirth', DateType::class, array('label' => 'Date of Birth', ))
+            ->add('comments', TextareaType::class, array('label' => 'Comments', 'required' => false))
             ->add('submit', SubmitType::class, array(
                 'attr' => array(
-                    'class' => 'btn-primary',
+                    'class' => 'subBtn',
                 ),
             ));
     }

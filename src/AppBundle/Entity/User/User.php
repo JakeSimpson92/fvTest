@@ -61,7 +61,7 @@ class User{
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=1, nullable=true)
+     * @ORM\Column(type="string", length=6, nullable=true)
      */
     private $gender;
 

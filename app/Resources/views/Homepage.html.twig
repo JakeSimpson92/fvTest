@@ -2,10 +2,11 @@
 {% block body %}
 <div class="container">
 <div class="row">
-    <div class="col-md-offset-3 col-md-5">
+    <div class="col-md-offset-2 col-md-8">
 
-                <h5>Add User</h5>
-
+        {% for message in app.flashes('notice') %}
+            <div id="submit success"><h2>{{ message }}</h2></div>
+        {% endfor %}
             <div class="ibox-content">
                 {% include 'Form/form.html.twig' %}
             </div>

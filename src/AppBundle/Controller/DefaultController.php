@@ -37,10 +37,7 @@ class DefaultController extends Controller
             $em->flush();
 
 
-            $this->addFlash('notice', array(
-                'message' => 'New User Added!',
-                'title'   => 'Success',
-            ));
+            $this->addFlash('notice', 'New Comment Added!');
 
             return $this->redirectToRoute('homepage');
         }
