@@ -1,57 +1,66 @@
 {% form_theme form 'bootstrap_3_layout.html.twig'%}
 
 {{ form_start(form) }}
-<div class="stepOne" id="stepOne">
+<div class="formStep" >
     <div class="headingDiv">
         <h2>Step 1: Your details</h2>
     </div>
+    <div class="formContent" id="stepOne">
+        <div class="errorMsg"></div>
         <div class="row">
             <div class="col-md-4">
-                {{ form_row(form.fName) }}
+                {{ form_row(form.fName, { 'id': 'fName'}) }}
             </div>
             <div class="col-md-4">
-                {{ form_row(form.lName) }}
+                {{ form_row(form.lName, { 'id': 'lName'}) }}
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                {{ form_row(form.email) }}
+                {{ form_row(form.email, { 'id': 'email'}) }}
             </div>
         </div>
-    <div id="navbtn">
-        <button type="button" id="btnOne">Next</button>
+        <div id="navbtn">
+            <button type="button" id="btnOne">Next &#62;</button>
+        </div>
     </div>
 </div>
 
-<div class="stepTwo" id="stepTwo">
+<div class="formStep" >
     <div class="headingDiv">
         <h2>Step 2: More comments</h2>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            {{ form_row(form.mobile) }}
+    <div class="formContent hiddenStep" id="stepTwo">
+        <div class="errorMsg"></div>
+        <div class="row">
+            <div class="col-md-4">
+                {{ form_row(form.mobile, { 'id': 'mobile'}) }}
+            </div>
+            <div class="col-md-4">
+                {{ form_row(form.gender, { 'id': 'gender'}) }}
+            </div>
         </div>
-        <div class="col-md-4">
-            {{ form_row(form.gender) }}
+        <div class="row">
+            <div class="col-md-5">
+                {{ form_row(form.dateOfBirth, { 'id': 'dateOfBirth'}) }}
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-5">
-            {{ form_row(form.dateOfBirth) }}
+        <div id="navbtn">
+            <button type="button" id="btnTwo">Next &#62;</button>
+            <button type="button" id="bBtnTwo">&#60; Back</button>
         </div>
-    </div>
-    <div id="navbtn">
-        <button type="button" id="bBtnTwo">Back</button>
-        <button type="button" id="btnTwo">Next</button>
     </div>
 </div>
-<div class="stepThree" id="stepThree">
+<div class="formStep" >
     <div class="headingDiv">
         <h2>Step 3: Final comments</h2>
     </div>
-    {{ form_row(form.comments) }}
-    <div class="navbtn">
-        {{ form_row(form.submit) }}
+    <div class="formContent hiddenStep" id="stepThree">
+        {{ form_row(form.comments, { 'id': 'comments'}) }}
+        <div class="navbtn">
+            {{ form_row(form.submit) }}
+            <button type="button" id="bBtnThree">&#60; Back</button>
+        </div>
+        {{ form_end(form) }}
     </div>
-    {{ form_end(form) }}
 </div>
